@@ -1,0 +1,15 @@
+{
+  "name": "ejecucion-paralela-pruebas-tcs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ejemplo de ejecución paralela con el test runner de Node.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-concurrency=3",
+    "test:parallel": "node --test --test-concurrency=3",
+    "test:sequential": "node --test --test-concurrency=1",
+    "evidence": "node scripts/generate-evidence.js"
+  },
+  "engines": { "node": ">=20.10" },
+  "license": "MIT"
+}
