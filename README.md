@@ -25,3 +25,9 @@ npm run evidence
 
 El último comando ejecuta ambos modos, mide sus duraciones y genera el archivo de
 evidencia en '../docs/evidencia-ejecucion.md'.
+
+## Interfaz gráfica
+
+Ejecuta `npm start` y abre `http://127.0.0.1:4175`. El botón
+**Comparar ejecuciones** corre las mismas pruebas en ambos modos y muestra la
+duración, los intervalos de cada prueba y la salida original de Node.js.

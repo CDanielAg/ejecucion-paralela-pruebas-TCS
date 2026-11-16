@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  font: 16px/1.55 "Inter", system-ui, sans-serif;
+  color: #171a35;
+  background: #f5f6fa;
+  --accent: #4939c6;
+  --border: #dfe1ed;
+}
+* { box-sizing: border-box; }
+main { width: min(1060px, 100% - 36px); margin: 0 auto; padding: 40px 0; }
+header { margin-bottom: 24px; }
+.tool, code { font-family: ui-monospace, monospace; color: #3829a3; }
+.tool { background: #ebe8ff; border-radius: 6px; padding: 4px 9px; font-size: .86rem; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.055em; margin: 8px 0 2px; }
+h2 { font-size: 1.25rem; letter-spacing: -.025em; }
+h3 { font-size: 1.1rem; }
+p { color: #515671; }
+.panel { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.panel p { margin-top: 6px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+button { font: inherit; font-size: .9rem; font-weight: 650; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; background: white; color: #33269c; cursor: pointer; }
+button:first-child { background: var(--accent); border-color: var(--accent); color: white; }
+button:hover:not(:disabled) { box-shadow: 0 0 0 2px #bcb3ff; }
+button:disabled { opacity: .62; cursor: wait; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+section + section { margin-top: 24px; }
+#status { margin: 4px 0 12px; }
+#results { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 12px; }
+.result { min-width: 0; }
+.summary { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.summary strong { font-size: 1.6rem; color: #3829a3; }
+.command { display: block; margin-top: 8px; font-size: .78rem; overflow-wrap: anywhere; }
+.timeline { list-style: none; padding: 0; margin: 12px 0; font-size: .84rem; }
+.timeline li + li { margin-top: 8px; }
+.track { height: 8px; border-radius: 6px; background: #edeafc; overflow: hidden; margin: 4px 0 2px; }
+.track span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+small { color: #515671; font-variant-numeric: tabular-nums; }
+details { border-top: 1px solid var(--border); padding-top: 8px; }
+summary { cursor: pointer; font-size: .85rem; font-weight: 650; }
+pre { overflow: auto; background: #171a35; color: #f5f6fa; padding: 12px; border-radius: 6px; max-height: 260px; }

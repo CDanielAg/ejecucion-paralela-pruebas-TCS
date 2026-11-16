@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pruebas en paralelo</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <span class="tool">node:test</span>
+    <h1>Pruebas en paralelo</h1>
+    <p>Compara cuánto tardan tres pruebas automatizadas al ejecutarse juntas o una tras otra.</p>
+  </header>
+  <section class="panel" aria-labelledby="how">
+    <h2 id="how">Cómo funciona</h2>
+    <p>El ejecutor de pruebas integrado en Node.js inicia cada archivo en un proceso separado. Con <code>--test-concurrency=3</code> puede ejecutar hasta tres archivos a la vez. Con <code>--test-concurrency=1</code> espera a que termine un archivo antes de iniciar el siguiente.</p>
+    <p>El ejemplo guarda una orden, genera un resumen y obtiene un usuario. Cada operación asíncrona tarda aproximadamente 1,2 segundos.</p>
+    <div class="actions">
+      <button type="button" data-modes="3,1">Comparar ejecuciones</button>
+      <button type="button" data-modes="3">Ejecutar en paralelo</button>
+      <button type="button" data-modes="1">Ejecutar en secuencial</button>
+    </div>
+  </section>
+  <section aria-labelledby="evidence">
+    <h2 id="evidence">Evidencia de ejecución</h2>
+    <p id="status" role="status">Elige un modo para ejecutar las pruebas.</p>
+    <div id="results"></div>
+  </section>
+</main>
+<template id="result">
+  <article class="panel result">
+    <div class="summary"><h3></h3><strong></strong></div>
+    <p class="counts"></p>
+    <code class="command"></code>
+    <ul class="timeline" aria-label="Tiempos por prueba"></ul>
+    <details><summary>Ver salida original de Node.js</summary><pre></pre></details>
+  </article>
+</template>
+</body>
+</html>
